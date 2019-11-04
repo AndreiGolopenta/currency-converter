@@ -9,7 +9,7 @@ This is a currency converter application.
 * [REST Countries](https://github.com/apilayer/restcountries/)
 
 __Screenshot__
-![alt text](https://raw.githubusercontent.com/AndreiGolopenta/Angular-CRUD/master/src/assets/screenshot.png)
+![alt text](https://raw.githubusercontent.com/AndreiGolopenta/currency-converter/master/src/assets/screenshot.png)
 
 
 ## Project Dependencies
