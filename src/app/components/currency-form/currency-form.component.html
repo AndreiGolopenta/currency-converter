@@ -1,0 +1,67 @@
+<form 
+  #form="ngForm" 
+  (ngSubmit)="handleSubmit(form.value)" 
+  novalidate>
+  <h2>Simulate conversion</h2>
+  <label for="local-currency">Local Currency</label>
+  <input
+    type="text"
+    maxlength="3"
+    minlength="3"
+    required
+    name="localCurrency"
+    #localCurrency="ngModel"
+    [(ngModel)]="inputValue.localCurrencyValue"
+    id="local-currency"
+    placeholder="Choose currency"
+    (click)="displayList(100, 1)"
+    (input)="searchCurrency(localCurrency.value)"
+    appInputFormat
+  />
+  <i class="material-icons" (click)="displayList(100, 1)">
+    arrow_drop_down
+  </i>
+  <label for="currency-conversion">Currency Conversion</label>
+  <input
+    type="text"
+    maxlength="3"
+    minlength="3"
+    required
+    name="currencyConversion"
+    #currencyConversion="ngModel"
+    [(ngModel)]="inputValue.currencyConversionValue"
+    id="currency-conversion"
+    placeholder="Choose currency"
+    (click)="displayList(15, 2)"
+    (input)="searchCurrency(currencyConversion.value)"
+    appInputFormat
+  />
+  <i class="material-icons" (click)="displayList(15, 2)">
+    arrow_drop_down
+  </i>
+  <label for="conversion-value">Conversion Value</label>
+  <input
+    type="number"
+    required
+    name="conversionValue"
+    #conversionValue="ngModel"
+    [(ngModel)]="inputValue.conversionValue"
+    id="conversion-value"
+    placeholder="Insert a value to convert."
+  />
+  <button 
+    id="submit-button" 
+    type="submit" 
+    [disabled]="form.invalid">
+    Convert
+  </button>
+  <div *ngIf="conversionResult.length > 0">
+    Conversion value is
+  </div>
+  <div class="result">{{ conversionResult[0] }}</div>
+  <div class="date">{{ conversionResult[1] }}</div>
+  <span class="swap-button" (click)="swapValue()">
+    <i class="material-icons">swap_horiz</i> Invert conversion
+  </span>
+</form>
+

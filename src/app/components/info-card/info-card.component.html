@@ -1,0 +1,27 @@
+<div class="info-card">
+  <span class="name">
+    EXCHANGE
+    <span>
+      APP
+    </span>
+  </span>
+  <p class="title">Easily convert</p>
+  <p class="title">your currencies</p>
+  <p>up to 33 currency</p>
+  <p class="title">from world!</p>
+  <div>
+    Are you going to travel and need to know how much your money is worth in
+    other currencies? Convert now your money to Dollar, Euro or any other
+    currency!
+  </div>
+  <button
+    [class.active]="btnActive"
+    (click)="showConverter()">
+    Currency converter
+  </button>
+  <button
+    [class.active]="!btnActive"
+    (click)="showRates()">
+    Exchange rates
+  </button>
+</div>

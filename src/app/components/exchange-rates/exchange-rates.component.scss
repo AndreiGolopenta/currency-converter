@@ -1,0 +1,64 @@
+@import '../../style';
+
+div {
+  position: absolute;
+  left: 350px;
+  width: 350px;
+  height: 510px;
+  background: #ffffff;
+  ul {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    left: 40px;
+    top: 32px;
+    width: 269px;
+    height: 292px;
+    overflow: auto;
+    list-style-type: none;
+    &::-webkit-scrollbar {
+      background: #cfcfd1;
+      width: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #545e6f;
+    }
+    li {
+      position: relative;
+      left: 10px;
+      height: 35px;
+      padding: 3px 0;
+      margin: 7px 0;
+      box-shadow: 0 0 3px #6a1b9a;
+      width: 90%;
+      border-radius: 4px;
+      img {
+        position: relative;
+        left: 10px;
+        top: 5px;
+        width: 35px;
+        height: 24px;
+      }
+      .code {
+        position: relative;
+        top: 5px;
+        left: 20px;
+        font-size: 12px;
+      }
+      .country {
+        position: absolute;
+        top: 5px;
+        left: 55px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .rate {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+    }
+  }
+}

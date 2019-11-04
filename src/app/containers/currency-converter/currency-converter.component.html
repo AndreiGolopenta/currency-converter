@@ -1,0 +1,33 @@
+<div class="app">
+  <app-info-card (animationTrigger)="handleAnimation($event)"></app-info-card>
+  <div class="overflow-hidden">
+    <div class="container" [@startAnimation]="animation ? 'final' : 'initial'">
+      <app-currency-form
+        [dropdown]="dropdown"
+        [conversionResult]="conversionResult"
+        [inputValue]="inputValue"
+        (showHideList)="handleList($event)"
+        (searchValue)="handleSearch($event)"
+        (formData)="handleSubmit($event)"
+        (swapInputValue)="handleSwap($event)"
+      >
+      </app-currency-form>
+      <app-exchange-rates
+        [data]="db"
+        [dropdown]="dropdown"
+        [rateInput]="rateInput"
+        (showHideList)="handleList($event)"
+        (searchValue)="handleSearch($event)"
+      >
+      </app-exchange-rates>
+    </div>
+  </div>
+</div>
+<app-input-list
+  class="drop-down-list"
+  *ngIf="dropdown.showList"
+  [dropdown]="dropdown"
+  [errorMessage]="errorMessage"
+  (selectedCurrency)="selectCurrencyFromList($event)"
+>
+</app-input-list>

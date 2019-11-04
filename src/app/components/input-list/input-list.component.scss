@@ -1,0 +1,61 @@
+.list-container {
+  position: relative;
+  z-index: 4;
+  width: 100vw;
+  height: 100vh;
+  .errorMessage {
+    position: absolute;
+    color: #da6969;
+    font-size: 12px;
+    margin: 14px 2px;
+  }
+  ul {
+    position: absolute;
+    border-radius: 4px;
+    list-style-type: none;
+    width: 232px;
+    overflow: auto;
+    box-shadow: 0 0 4px #545e6f;
+    background: #ffffff;
+    &::-webkit-scrollbar {
+      background: #cfcfd1;
+      width: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #545e6f;
+    }
+    li {
+      position: relative;
+      left: -30px;
+      width: 240px;
+      height: 34px;
+      box-shadow: 0 0 4px #545e6f;
+      margin: 10px 0;
+      background: #f1f2f5;
+      cursor: pointer;
+      &:hover {
+        background: #e5e6e7;
+      }
+      img {
+        position: absolute;
+        left: 9px;
+        top: 4px;
+        width: 34px;
+        height: 24px;
+      }
+      .code {
+        position: absolute;
+        left: 52px;
+        top: 19px;
+        font-size: 10px;
+      }
+      .country {
+        position: absolute;
+        top: 3px;
+        left: 52px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+    }
+  }
+}

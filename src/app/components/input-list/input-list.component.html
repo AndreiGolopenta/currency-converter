@@ -1,0 +1,25 @@
+<div class="list-container">
+  <span
+    *ngIf="errorMessage"
+    class="errorMessage"
+    [ngStyle]="{ top: dropdown.topPosition, left: dropdown.leftPosition }">
+    Sorry, we couldn't find any results matching
+  </span>
+  <ul
+    [ngStyle]="{ top: dropdown.topPosition, left: dropdown.leftPosition, height: dropdown.height }">
+    <li 
+      *ngFor="let data of dropdown.data"
+      (click)="selectCurrency(data.currenciesCode)">
+      <img [src]="data.flag" alt="logo" />
+      <span class="code">{{ data.currenciesCode }}</span>
+      <span
+        *ngIf="data.currenciesCode !== 'GBP'; else uk" 
+        class="country">
+        {{ data.country }}
+      </span>
+      <ng-template #uk>
+        <span class="country">United Kingdom</span>
+      </ng-template>
+    </li>
+  </ul>
+</div>

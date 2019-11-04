@@ -1,0 +1,34 @@
+<div>
+  <h2>Exchange rates</h2>
+  <label for="rates">Base currency</label>
+  <input 
+    id="rates" 
+    type="text" 
+    maxlength="3"
+    minlength="3"
+    [(ngModel)]="rateInput"
+    #rates
+    (click)="openDropdown(100)"
+    (input)="searchCurrency(rates.value)"
+    appInputFormat
+  />
+  <i 
+    (click)="openDropdown(100)"
+    class="material-icons">
+    arrow_drop_down
+  </i>
+  <ul>
+    <li 
+      *ngFor="let el of data">
+      <img [src]="el.flag" alt="flag">
+      <span class="code">{{ el.currenciesCode }}</span>
+      <ng-container [ngSwitch]="el.currenciesCode">
+        <span *ngSwitchCase="'GBP'" class="country">United Kingdom</span>
+        <span *ngSwitchCase="'USD'" class="country">USA</span>
+        <span *ngSwitchCase="'KRW'" class="country">Korea</span>
+        <span *ngSwitchDefault class="country">{{ el.country }}</span>
+      </ng-container>
+      <span class="rate">{{ el.rate | decimal }}</span>
+    </li>
+  </ul>
+</div>
