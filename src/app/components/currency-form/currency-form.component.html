@@ -10,7 +10,7 @@
     minlength="3"
     required
     name="localCurrency"
-    #localCurrency="ngModel"
+    #localCurrency
     [(ngModel)]="inputValue.localCurrencyValue"
     id="local-currency"
     placeholder="Choose currency"
@@ -28,7 +28,7 @@
     minlength="3"
     required
     name="currencyConversion"
-    #currencyConversion="ngModel"
+    #currencyConversion
     [(ngModel)]="inputValue.currencyConversionValue"
     id="currency-conversion"
     placeholder="Choose currency"
@@ -44,7 +44,7 @@
     type="number"
     required
     name="conversionValue"
-    #conversionValue="ngModel"
+    #conversionValue
     [(ngModel)]="inputValue.conversionValue"
     id="conversion-value"
     placeholder="Insert a value to convert."
